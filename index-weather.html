@@ -71,7 +71,7 @@
 
 		  <div class="forecast-item">
 		    <div class="day">
-		      <h4>{{getDayOfTheWeek(5)}}</h4>
+		      <h4>{{getDayOfTheWeek(4)}}</h4>
 		      <h6>Aug 10</h6>
 		    </div>
 		    <div class="forecast">
@@ -161,7 +161,7 @@
 				},
 				getDates: function (offset) {
 					let dates = new Date ()
-					console.log(dates.setDate(dates.getDate() + 5))
+					console.log(dates.setDate(dates.getDate()))
 				}
 			}
 		});
@@ -209,19 +209,21 @@
 			// }
 
 			// getDates()
+			let testIcon = document.getElementById('iconTwo')
+			testIcon.classList.remove('wi-night-sleet')
 
-			// function updateIcons (response) {
-			// 	iconArray[0].classList.remove('wi-day-sunny')
-			// 	iconArray[0].classList.add('wi-day-rain')
-			// 	console.log(iconArray[0].classList)
-			// 	// for (var i = 0; i < response.data.daily.length; i++) {
-			// 	// 	iconArray[i].classList.remove('wi-day-sunny')
-			// 	// 	iconArray[i].classList.add('wi-day-rain')
-			// 	// 	if (response.data.daily[i].weather[0].description.includes('rain')) {
-			// 	//
-			// 	// 	}
-			// 	// }
-			// }
+			function updateIcons (response) {
+				iconArray[0].
+				iconArray[0].classList.add('wi-day-rain')
+				console.log(iconArray[0].classList)
+				for (var i = 0; i < response.data.daily.length; i++) {
+					iconArray[i].classList.remove('wi-day-sunny')
+					iconArray[i].classList.add('wi-day-rain')
+					if (response.data.daily[i].weather[0].description.includes('rain')) {
+
+					}
+				}
+			}
 
 
 			function showHideIcons (show, hideOne, hideTwo, hideThree) {
