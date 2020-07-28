@@ -10,108 +10,118 @@
 <body>
 
 	<!-- Parent Div Begins -->
-	<div class="parent" id="app" v-if="weather" v-on:click="getDayOfTheWeek()">
+	<div class="parent" id="app" v-if="location">
 
 		<!-- Weather UI HTML -->
 		<div class="weather-widget">
 		  <div class="weather-icon row">
-		    <i id="iconOne" class="wi wi-day-sunny" id="icon1"></i>
+				<img v-bind:src="icons[0]" alt="">
 		  </div>
-		  <h1 class="temp-c row">{{weather.data.daily[0].temp.day.toFixed(0)}}C</h1>
+		  <h1 class="temp-c row">{{weather.data.daily[0].temp.day.toFixed(0)}}°C</h1>
 		  <h5 class="condition row">{{weather.data.daily[0].weather[0].description}}</h5>
-		  <h3 class="location-name row">Wellington</h3>
-		  <h5 class="location-country row">New Zealand</h5>
-			<h4 class="day row">{{getDayOfTheWeek(0)}}</h4>
+		  <h3 class="location-name row">{{location.data.features[2].text + ', ' + location.data.features[3].text}}</h3>
+		  <h5 class="location-country row">{{location.data.features[5].text}}</h5>
+			<h4 class="day row">{{days[0] + ', ' + dates[0]}}</h4>
 		</div>
 		<div class="weather-forecast">
 
 		  <div class="forecast-item">
 		    <div class="day">
 		      <h4>Tomorrow</h4>
-		      <h6>{{getDates()}}</h6>
+		      <h6>{{dates[1]}}</h6>
 		    </div>
 		    <div class="forecast">
-		      <i id="iconTwo" class="wi wi-night-sleet"></i> {{weather.data.daily[1].temp.day.toFixed(0)}}C
-		      <h6>{{weather.data.daily[1].weather[0].description}}</h6>
+					<div class="icon-container">
+		      	<img v-bind:src="icons[1]" alt="">
+						<h4>{{weather.data.daily[1].temp.day.toFixed(0)}}°C</h4>
+					</div>
+		      <h6 class="condition">{{weather.data.daily[1].weather[0].description}}</h6>
 		    </div>
 		  </div>
 
 		  <div class="forecast-item">
 		    <div class="day">
-		      <h4>{{getDayOfTheWeek(2)}}</h4>
-		      <h6>Aug 7</h6>
+		      <h4>{{days[2]}}</h4>
+		      <h6>{{dates[2]}}</h6>
 		    </div>
 		    <div class="forecast">
-		      <i id="iconThree" class="wi wi-night-sleet"></i> {{weather.data.daily[2].temp.day.toFixed(0)}}C
-		      <h6>{{weather.data.daily[2].weather[0].description}}</h6>
+					<div class="icon-container">
+		      	<img v-bind:src="icons[2]" alt="">
+						<h4>{{weather.data.daily[2].temp.day.toFixed(0)}}°C</h4>
+					</div>
+		      <h6 class="condition">{{weather.data.daily[2].weather[0].description}}</h6>
 		    </div>
 		  </div>
 
 		  <div class="forecast-item">
 		    <div class="day">
-		      <h4>{{getDayOfTheWeek(3)}}</h4>
-		      <h6>Aug 8</h6>
+		      <h4>{{days[3]}}</h4>
+		      <h6>{{dates[3]}}</h6>
 		    </div>
 		    <div class="forecast">
-		      <i id="iconFour" class="wi wi-day-thunderstorm"></i> {{weather.data.daily[3].temp.day.toFixed(0)}}C
-		      <h6>{{weather.data.daily[3].weather[0].description}}</h6>
+					<div class="icon-container">
+		      	<img v-bind:src="icons[3]" alt="">
+						<h4>{{weather.data.daily[3].temp.day.toFixed(0)}}°C</h4>
+					</div>
+		      <h6 class="condition">{{weather.data.daily[3].weather[0].description}}</h6>
 		    </div>
 		  </div>
 
 		  <div class="forecast-item">
 		    <div class="day">
-		      <h4>{{getDayOfTheWeek(4)}}</h4>
-		      <h6>Aug 9</h6>
+		      <h4>{{days[4]}}</h4>
+		      <h6>{{dates[4]}}</h6>
 		    </div>
 		    <div class="forecast">
-		      <i id="iconFive" class="wi wi-day-sunny"></i>{{weather.data.daily[4].temp.day.toFixed(0)}}C
-		      <h6>{{weather.data.daily[4].weather[0].description}}</h6>
+					<div class="icon-container">
+		      	<img v-bind:src="icons[4]" alt="">
+						<h4>{{weather.data.daily[4].temp.day.toFixed(0)}}°C</h4>
+					</div>
+		      <h6 class="condition">{{weather.data.daily[4].weather[0].description}}</h6>
 		    </div>
 		  </div>
 
 		  <div class="forecast-item">
 		    <div class="day">
-		      <h4>{{getDayOfTheWeek(4)}}</h4>
-		      <h6>Aug 10</h6>
+		      <h4>{{days[5]}}</h4>
+		      <h6>{{dates[5]}}</h6>
 		    </div>
 		    <div class="forecast">
-		      <i id="iconSix" class="wi wi-night-sleet"></i> {{weather.data.daily[5].temp.day.toFixed(0)}}C
-		      <h6>{{weather.data.daily[5].weather[0].description}}</h6>
+					<div class="icon-container">
+		      	<img v-bind:src="icons[5]" alt="">
+						<h4>{{weather.data.daily[5].temp.day.toFixed(0)}}°C</h4>
+					</div>
+		      <h6 class="condition">{{weather.data.daily[5].weather[0].description}}</h6>
 		    </div>
 		  </div>
 
 		  <div class="forecast-item">
 		    <div class="day">
-		      <h4>{{getDayOfTheWeek(-1)}}</h4>
-		      <h6>Aug 11</h6>
+		      <h4>{{days[6]}}</h4>
+		      <h6>{{dates[6]}}</h6>
 		    </div>
 		    <div class="forecast">
-		      <i id="iconSeven" class="wi wi-night-sleet"></i> {{weather.data.daily[6].temp.day.toFixed(0)}}C
-		      <h6>{{weather.data.daily[6].weather[0].description}}</h6>
+					<div class="icon-container">
+		      	<img v-bind:src="icons[6]" alt="">
+						<h4>{{weather.data.daily[6].temp.day.toFixed(0)}}°C</h4>
+					</div>
+		      <h6 class="condition">{{weather.data.daily[6].weather[0].description}}</h6>
 		    </div>
 		  </div>
 
 		  <div class="forecast-item">
 		    <div class="day">
-		      <h4>{{getDayOfTheWeek(0)}}</h4>
-		      <h6>Aug 12</h6>
+		      <h4>{{days[7]}}</h4>
+		      <h6>{{dates[7]}}</h6>
 		    </div>
 		    <div class="forecast">
-		      <i id="iconEight" class="wi wi-night-sleet"></i> {{weather.data.daily[7].temp.day.toFixed(0)}}C
-		      <h6>{{weather.data.daily[7].weather[0].description}}</h6>
+					<div class="icon-container">
+						<img v-bind:src="icons[7]" alt="">
+						<h4>{{weather.data.daily[7].temp.day.toFixed(0)}}°C</h4>
+					</div>
+		      <h6 class="condition">{{weather.data.daily[7].weather[0].description}}</h6>
 		    </div>
 		  </div>
-
-		  <!-- <div class="forecast-item">
-		    <div class="day">
-		      <h4>Sunday</h4>
-		      <h6>Aug 13</h6>
-		    </div>
-		    <div class="forecast">
-		      <i class="wi wi-night-sleet"></i> C
-		      <h6>Partly Cloudy</h6>
-		    </div>
-		  </div> -->
 
 		</div>
 	<!-- WeatherUI HTML ENDS -->
@@ -119,141 +129,9 @@
 	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>
+	<script src="js/custom.js"></script>
 
-	<script>
-	(function(){
-
-		const iconOne = document.getElementById('iconOne')
-		const iconTwo = document.getElementById('iconTwo')
-		const iconThree = document.getElementById('iconThree')
-		const iconFour = document.getElementById('iconFour')
-		const iconFive = document.getElementById('iconFive')
-		const iconSix = document.getElementById('iconSix')
-		const iconSeven = document.getElementById('iconSeven')
-		const iconEight = document.getElementById('iconEight')
-
-		const iconArray = [iconOne, iconTwo, iconThree, iconFour, iconFive, iconSix, iconSeven, iconEight]
-		// console.log(iconOne)
-
-		let app = new Vue({
-			el: '#app',
-			data: {
-				weather: false,
-				date: false
-			},
-			methods: {
-				getDayOfTheWeek: function (offset) {
-					// Ref to the date object
-					const date = new Date()
-					// Got an array of days that are strings
-					const days = [
-						'Sunday',
-						'Monday',
-						'Tuesday',
-						'Wednesday',
-						'Thursday',
-						'Friday',
-						'Saturday'
-					]
-
-					// days[date.getDay()]
-					return days[date.getDay() + offset]
-				},
-				getDates: function (offset) {
-					let dates = new Date ()
-					console.log(dates.setDate(dates.getDate()))
-				}
-			}
-		});
-
-		 function makeAjaxRequest () {
-		    // GET request for remote image in node.js
-		    axios({
-		      method: 'get',
-		      url: 'https://api.openweathermap.org/data/2.5/onecall?lat=-41.282626&lon=-174.773390&units=metric&exclude=hourly,minute&appid=66ce6f7e945db003aaa343f0bc010dc8'
-		    }).then(function (response) {
-					app.weather = response
-					getStarted()
-					//
-					// updateIcons(response)
-
-					// weatherCheck(response.data)
-		    });
-		  } // makeAjaxRequest ENDS
-
-		  makeAjaxRequest();
-
-			function getStarted () {
-				console.log(app.weather)
-			}
-
-			// function getDates () {
-			//
-			// 	let getDates = {
-			// 		today: new Date(),
-			// 		day: new Date().getDate(),
-			// 		month: new Date().getMonth(),
-			// 		day: [
-			// 					new Date().getDate() + 1,
-			// 					new Date().getDate() + 2,
-			// 					new Date().getDate() + 3,
-			// 					new Date().getDate() + 4,
-			// 					new Date().getDate() + 5,
-			// 					new Date().getDate() + 6,
-			// 					new Date().getDate() + 7
-			// 				]
-			// 	}
-
-			// 	console.log(getDates.day[5])
-			//
-			// }
-
-			// getDates()
-			let testIcon = document.getElementById('iconTwo')
-			testIcon.classList.remove('wi-night-sleet')
-
-			function updateIcons (response) {
-				iconArray[0].
-				iconArray[0].classList.add('wi-day-rain')
-				console.log(iconArray[0].classList)
-				for (var i = 0; i < response.data.daily.length; i++) {
-					iconArray[i].classList.remove('wi-day-sunny')
-					iconArray[i].classList.add('wi-day-rain')
-					if (response.data.daily[i].weather[0].description.includes('rain')) {
-
-					}
-				}
-			}
-
-
-			function showHideIcons (show, hideOne, hideTwo, hideThree) {
-				let tempArr = [show, hideOne, hideTwo, hideThree]
-				for (var i = 0; i < tempArr.length; i++) {
-					tempArr[i].classList.remove('show')
-					tempArr[i].classList.remove('hide')
-				}
-				show.classList.add('show')
-				hideOne.classList.add('hide')
-				hideTwo.classList.add('hide')
-				hideThree.classList.add('hide')
-			}
-
-			// function weatherCheck (data) {
-			// 	console.log(data);
-			// 	// Has 8 checks
-			// 	if(data.daily[0].weather[0].description.includes('sun')) {
-			// 		alert('rain spotted');
-			// 		$('panelOne').
-			// 	}
-			//
-			//   if(data.daily[0].weather[0].description.includes('sun')) {
-			// 		alert('rain spotted');
-			// 	}
-			//
-			// }
-
-
-	}()); // iffe function ENDS
-	</script>
 </body>
 </html>
