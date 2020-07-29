@@ -1,16 +1,5 @@
 (function(){
 
-  // const iconOne = document.getElementById('iconOne')
-  // const iconTwo = document.getElementById('iconTwo')
-  // const iconThree = document.getElementById('iconThree')
-  // const iconFour = document.getElementById('iconFour')
-  // const iconFive = document.getElementById('iconFive')
-  // const iconSix = document.getElementById('iconSix')
-  // const iconSeven = document.getElementById('iconSeven')
-  // const iconEight = document.getElementById('iconEight')
-
-  // const iconArray = [iconOne, iconTwo, iconThree, iconFour, iconFive, iconSix, iconSeven, iconEight]
-
   let app = new Vue({
     el: '#app',
     data: {
@@ -78,60 +67,5 @@
     } // makeAjaxRequest ENDS
 
     makeAjaxRequest();
-
-
-
-    // mapboxgl.accessToken = 'pk.eyJ1IjoiYmVuZWx3b29kcyIsImEiOiJja2Q2Z3oxdGExMnBuMnNvMnMyYWZ5MjJrIn0.qOaxngOcrWkS5gOQnpHn0A';
-    //   var map = new mapboxgl.Map({
-    //   container: 'map',
-    //   style: 'mapbox://styles/mapbox/streets-v11',
-    //   center: [-79.4512, 43.6568],
-    //   zoom: 13
-    // });
-    //
-    // map.addControl(
-    //   new MapboxGeocoder({
-    //     accessToken: mapboxgl.accessToken,
-    //     mapboxgl: mapboxgl
-    //   })
-    // );
-
-
-
-    // function showPosition(position) {
-    //   console.log(position.coords.latitude)
-    //   console.log(position.coords.longitude)
-    // }
-    //
-    // getLocation()
-
-    // let testIcon = document.getElementById('iconTwo')
-    // testIcon.classList.remove('wi-night-sleet')
-
-    // function updateIcons (response) {
-    // 	iconArray[0].
-    // 	iconArray[0].classList.add('wi-day-rain')
-    // 	console.log(iconArray[0].classList)
-    // 	for (var i = 0; i < response.data.daily.length; i++) {
-    // 		iconArray[i].classList.remove('wi-day-sunny')
-    // 		iconArray[i].classList.add('wi-day-rain')
-    // 		if (response.data.daily[i].weather[0].description.includes('rain')) {
-    //
-    // 		}
-    // 	}
-    // }
-
-    // function showHideIcons (show, hideOne, hideTwo, hideThree) {
-    // 	let tempArr = [show, hideOne, hideTwo, hideThree]
-    // 	for (var i = 0; i < tempArr.length; i++) {
-    // 		tempArr[i].classList.remove('show')
-    // 		tempArr[i].classList.remove('hide')
-    // 	}
-    // 	show.classList.add('show')
-    // 	hideOne.classList.add('hide')
-    // 	hideTwo.classList.add('hide')
-    // 	hideThree.classList.add('hide')
-    // }
-
-
+    
 }()); // iffe function ENDS
