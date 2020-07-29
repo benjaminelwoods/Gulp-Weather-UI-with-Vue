@@ -4,10 +4,10 @@
     el: '#app',
     data: {
       location: false,
+      icons: false,
       weather: false,
       dates: false,
-      days: false,
-      icons: false
+      days: false
     },
     created: function () {
       this.createDates()
@@ -67,5 +67,5 @@
     } // makeAjaxRequest ENDS
 
     makeAjaxRequest();
-    
+
 }()); // iffe function ENDS

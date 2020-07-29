@@ -10,6 +10,7 @@
 
 .icon-container img {
   max-width: 60px;
+  min-height: 60px;
 }
 
 .day h6 {
@@ -28,4 +29,113 @@
 
 .icon-container h4 {
   font-size: 24px;
+}
+
+body, #app {
+  overflow-x: hidden;
+}
+
+img {
+  animation: opacityOnLoad 0.4s ease;
+}
+
+@keyframes opacityOnLoad {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.weather-widget {
+  animation: onLoad4 0.8s ease;
+}
+
+.weather-forecast > :nth-child(1){
+  animation: onLoad 0.8s ease;
+}
+
+.weather-forecast > :nth-child(2){
+  animation: onLoad 0.8s ease;
+  animation-delay: 0.2s;
+  transform: translateY(-100vh);
+  animation-fill-mode: forwards;
+}
+
+.weather-forecast > :nth-child(3){
+  animation: onLoad 0.8s ease;
+  animation-delay: 0.4s;
+  transform: translateY(-100vh);
+  animation-fill-mode: forwards;
+}
+
+.weather-forecast > :nth-child(4){
+  animation: onLoad 0.8s ease;
+  animation-delay: 0.6s;
+  transform: translateY(-100vh);
+  animation-fill-mode: forwards;
+}
+
+.weather-forecast > :nth-child(5){
+  animation: onLoad 0.8s ease;
+  animation-delay: 0.8s;
+  transform: translateY(-100vh);
+  animation-fill-mode: forwards;
+}
+
+.weather-forecast > :nth-child(6){
+  animation: onLoad 0.8s ease;
+  animation-delay: 1s;
+  transform: translateY(-100vh);
+  animation-fill-mode: forwards;
+}
+
+.weather-forecast > :nth-child(7){
+  animation: onLoad 0.8s ease;
+  animation-delay: 1.2s;
+  transform: translateY(-100vh);
+  animation-fill-mode: forwards;
+}
+
+@keyframes onLoad4 {
+  0% {
+    transform: translateY(-100vh);
+  }
+  100% {
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes onLoad {
+  0% {
+    opacity: 0;
+    transform: translateX(100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes onLoad2 {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes onLoad3 {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
 }
